@@ -1,0 +1,7 @@
+@if (profiles().length) {
+  <div class="flex flex-col gap-4">
+    @for (profile of profiles(); track profile.id) {
+      <app-profile-card [profile]="profile"></app-profile-card>
+    }
+  </div>
+}
