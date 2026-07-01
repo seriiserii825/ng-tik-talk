@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { catchError, of, tap } from 'rxjs';
 import { ITokenResponse } from '../interfaces/ITokenResponse';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ import { ITokenResponse } from '../interfaces/ITokenResponse';
 export class AuthService {
   http = inject(HttpClient);
   baseApiUrl = environment.apiBaseUrl;
+  cookieService = inject(CookieService);
 
   accessToken: string | null = null;
   refreshToken: string | null = null;
@@ -22,6 +24,8 @@ export class AuthService {
       tap((val) => {
         this.accessToken = val.access_token;
         this.refreshToken = val.refresh_token;
+        this.cookieService.set('access_token', val.access_token);
+        this.cookieService.set('refresh_token', val.refresh_token);
       }),
       catchError((err) => {
         console.error(err);
@@ -31,6 +35,10 @@ export class AuthService {
   }
 
   get isAuth() {
+    if (!this.accessToken) {
+      this.accessToken = this.cookieService.get('access_token') || null;
+    }
+
     return this.accessToken !== null;
   }
 }
