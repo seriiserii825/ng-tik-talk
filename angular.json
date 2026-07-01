@@ -11,6 +11,18 @@
       "schematics": {
         "@school/angular-component": {
           "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "type": "component"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        },
+        "@schematics/angular:directive": {
+          "type": "directive"
+        },
+        "@schematics/angular:pipe": {
+          "type": "pipe"
         }
       },
       "root": "",
