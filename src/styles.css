@@ -25,7 +25,6 @@ ul {
   stroke: currentcolor;
 }
 
-// Add a transition effect to SVG icons for smooth color changes
 svg * {
   transition-property: fill, stroke;
 }
