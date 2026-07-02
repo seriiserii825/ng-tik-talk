@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-eye',
@@ -7,9 +7,5 @@ import { Component, signal } from '@angular/core';
   styleUrl: './eye.component.css',
 })
 export class EyeComponent {
-  is_active = signal(false);
-
-  toggleActive() {
-    this.is_active.set(!this.is_active());
-  }
+  active = input<boolean>(false);
 }

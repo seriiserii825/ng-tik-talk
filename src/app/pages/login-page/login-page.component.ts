@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
@@ -13,6 +13,12 @@ import { EyeComponent } from '../../shared/eye/eye.component';
 export class LoginPageComponent {
   authService = inject(AuthService);
   router = inject(Router);
+
+  isPasswordVisible = signal(false);
+
+  togglePasswordVisibility() {
+    this.isPasswordVisible.set(!this.isPasswordVisible());
+  }
 
   form = new FormGroup({
     username: new FormControl('', { nonNullable: true, validators: Validators.required }),
