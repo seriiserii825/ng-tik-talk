@@ -1,13 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { IMenuItem } from '../../interfaces/IMenuItem';
-import { HomeIcon } from '../../icons/home-icon/home-icon';
-import { ChatIcon } from '../../icons/chat-icon/chat-icon';
-import { SearchIcon } from '../../icons/search-icon/search-icon';
-import { NgFor } from '@angular/common';
+import { SvgIconComponent } from '../svg-icon-component/svg-icon-component';
 
 @Component({
   selector: 'app-sidebar-menu',
-  imports: [HomeIcon, ChatIcon, SearchIcon, NgFor],
+  imports: [NgFor, SvgIconComponent],
   templateUrl: './sidebar-menu.component.html',
   styleUrl: './sidebar-menu.component.css',
 })

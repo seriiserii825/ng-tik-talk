@@ -3,19 +3,19 @@
     *ngFor="let item of menuItems"
     [href]="item.route"
     [class]="item.icon"
-    class="text-white hover:text-primary transition flex items-center gap-4 p-2 hover:bg-dark-hover rounded-xs"
+    class="flex items-center p-2 text-white hover:text-primary transition gap-4 hover:bg-dark-hover rounded-xs"
   >
     @if (item.icon === 'home') {
-      <div class="w-5">
-        <app-home-icon />
+      <div class="w-5 h-5">
+        <app-svg icon="home" />
       </div>
     } @else if (item.icon === 'chat') {
-      <div class="w-4">
-        <app-chat-icon />
+      <div class="w-5 h-5">
+        <app-svg icon="chat" />
       </div>
     } @else {
-      <div class="w-4">
-        <app-search-icon />
+      <div class="w-5 h-5">
+        <app-svg icon="search" />
       </div>
     }
     <span class="text-sm font-bold">{{ item.title }}</span>
