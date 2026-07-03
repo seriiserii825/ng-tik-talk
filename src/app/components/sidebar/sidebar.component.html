@@ -28,7 +28,9 @@
         alt=""
       />
       <span class="text-sm text-white">{{ me.username }}</span>
-      <app-svg icon="settings" class="w-4 h-4" />
+      <a class="block w-4 h-4" [routerLink]="['settings']">
+        <app-svg icon="settings" />
+      </a>
     </footer>
   }
 </div>
