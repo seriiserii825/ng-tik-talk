@@ -4,6 +4,15 @@
     <img class="relative z-20" src="/img/sidebar-logo.png" alt="sidebar logo" />
   </div>
   <app-sidebar-menu />
-  <h2 class="mb-5 ml-3 text-sm font-bold text-white">Subscribers</h2>
-  <app-subscriber-card-component />
+  <h2 class="mb-5 ml-3 text-lg font-bold text-white">Subscribers</h2>
+  <div class="ml-3">
+    <app-subscriber-card-component />
+  </div>
+  <a
+    [routerLink]="'/subscribers'"
+    class="flex items-center ml-3 gap-2 text-primary hover:text-white transition-colors duration-300"
+  >
+    <span>View all</span>
+    <app-svg icon="arrow-right" class="w-4 h-4" />
+  </a>
 </div>
