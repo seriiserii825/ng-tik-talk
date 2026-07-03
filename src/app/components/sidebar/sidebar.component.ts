@@ -6,10 +6,18 @@ import { ProfileService } from '../../services/profile.service';
 import { SidebarMenuComponent } from '../sidebar-menu/sidebar-menu.component';
 import { SubscriberCardComponent } from '../subscriber-card-component/subscriber-card-component';
 import { SvgIconComponent } from '../svg-icon-component/svg-icon-component';
+import { LoadingIcon } from '../../icons/loading-icon/loading-icon';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SidebarMenuComponent, SubscriberCardComponent, RouterLink, SvgIconComponent, ImgUrlPipe],
+  imports: [
+    SidebarMenuComponent,
+    SubscriberCardComponent,
+    RouterLink,
+    SvgIconComponent,
+    ImgUrlPipe,
+    LoadingIcon,
+  ],
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent implements OnInit {
