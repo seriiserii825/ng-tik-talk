@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { catchError, of } from 'rxjs';
+import { catchError, map, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { IProfile } from '../interfaces/IProfile';
+import { IWithPagination } from '../interfaces/IWithPagination';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,18 @@ export class ProfileService {
         return of([]);
       }),
     );
+  }
+
+  getSubscribersShortList() {
+    return this.http
+      .get<IWithPagination<IProfile>>(`${this.baseApiUrl}/account/subscriptions/`)
+      .pipe(
+        map((data) => data.items.slice(0, 3)),
+        catchError((err) => {
+          console.error(err);
+          return of([] as IProfile[]);
+        }),
+      );
   }
 
   getMe() {

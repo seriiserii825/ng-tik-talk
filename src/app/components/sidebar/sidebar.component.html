@@ -6,7 +6,9 @@
   <app-sidebar-menu />
   <h2 class="mb-5 ml-3 text-lg font-bold text-white">Subscribers</h2>
   <div class="ml-3">
-    <app-subscriber-card-component />
+    @for (subscriber of subscribers$ | async; track subscriber.id) {
+      <app-subscriber-card-component [profile]="subscriber" />
+    }
   </div>
   <a
     [routerLink]="'/subscribers'"
