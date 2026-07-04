@@ -1,4 +1,25 @@
-<div class="flex justify-between items-center mb-4">
+<div class="flex items-center justify-between mb-4">
   <h2 class="title">Subscribers</h2>
   <div class="bg-secondary h-4.5 px-1 text-[12px] font-bold text-dark">28</div>
+</div>
+
+<div class="flex items-center justify-between mb-8">
+  <div class="flex items-center gap-1.5">
+    @for (subscriber of subscribers()!; track subscriber.id) {
+      <a
+        [routerLink]="`/profile/${subscriber.id}`"
+        class="relative overflow-hidden rounded-full transition duration-300 hover:-translate-y-0.5 w-9 h-9"
+      >
+        <img [src]="(subscriber.avatarUrl | imgUrl) ?? '/img/avatar.avif'" alt="avatar" />
+      </a>
+    }
+  </div>
+  <div class="relative w-4 h-4 bg-white rounded-full transition hover:bg-gray-300 cursor-pointer">
+    <div
+      class="w-2 h-px bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    ></div>
+    <div
+      class="w-px h-2 bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    ></div>
+  </div>
 </div>
