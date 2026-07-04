@@ -34,6 +34,7 @@ svg * {
   --color-dark-hover: #161616;
   --color-light: #fff;
   --color-primary: #ae7aff;
+  --color-secondary: #98e9ab;
 
   --font-1: 'Jetbrainsmono', sans-serif;
 }
@@ -49,7 +50,7 @@ svg * {
     @apply shadow-lg;
   }
   .title {
-    @apply text-[16px] font-extrabold;
+    @apply text-[18px] font-extrabold;
   }
   .main-title {
     @apply text-5xl font-bold;
