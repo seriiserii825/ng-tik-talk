@@ -1,4 +1,4 @@
-<a [routerLink]="['/profile', 4]" class="flex items-center px-0 py-2 mb-2 gap-4">
+<a [routerLink]="['/profile', profile().id]" class="flex items-center px-0 py-2 mb-2 gap-4">
   <img
     class="w-8 h-8 rounded-2xl"
     [src]="(profile().avatarUrl | imgUrl) ?? '/img/avatar.avif'"

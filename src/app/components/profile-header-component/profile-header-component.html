@@ -1,7 +1,13 @@
 <div class="flex items-center pb-8 pl-6 gap-6">
-  <img src="/img/avatar.avif" alt="logo" class="rounded-full w-28 h-28" />
+  <img
+    [src]="(profile().avatarUrl | imgUrl) ?? '/img/avatar.avif'"
+    alt="logo"
+    class="rounded-full w-28 h-28"
+  />
   <div class="flex flex-col gap-1">
-    <h1 class="text-2xl font-extrabold">John Doe</h1>
-    <p class="text-sm">Software Engineer</p>
+    <h1 class="text-2xl font-extrabold">{{ profile().firstName }} {{ profile().lastName }}</h1>
+    @if (profile().description) {
+      <p class="text-sm">{{ profile().description }}</p>
+    }
   </div>
 </div>

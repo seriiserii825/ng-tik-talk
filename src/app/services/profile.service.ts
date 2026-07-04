@@ -13,6 +13,7 @@ export class ProfileService {
   baseApiUrl = environment.apiBaseUrl;
 
   me = signal<IProfile | null>(null);
+  account = signal<IProfile | null>(null);
 
   getTestAccounts() {
     return this.http.get<IProfile[]>(`${this.baseApiUrl}/account/test_accounts`).pipe(
@@ -39,6 +40,18 @@ export class ProfileService {
     return this.http.get<IProfile>(`${this.baseApiUrl}/account/me`).pipe(
       tap((profile) => {
         this.me.set(profile);
+      }),
+      catchError((err) => {
+        console.error(err);
+        return of(null);
+      }),
+    );
+  }
+
+  getProfileById(id: number) {
+    return this.http.get<IProfile>(`${this.baseApiUrl}/account/${id}`).pipe(
+      tap((profile) => {
+        this.account.set(profile);
       }),
       catchError((err) => {
         console.error(err);

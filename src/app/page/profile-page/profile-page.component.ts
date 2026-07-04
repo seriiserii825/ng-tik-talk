@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProfileFollowers } from '../../components/profile-followers/profile-followers';
 import { ProfileHeaderComponent } from '../../components/profile-header-component/profile-header-component';
 import { SvgIconComponent } from '../../components/svg-icon-component/svg-icon-component';
@@ -23,6 +23,8 @@ import { AboutMe } from '../../components/about-me/about-me';
 export class ProfilePageComponent implements OnInit {
   profileService = inject(ProfileService);
   subscribers = toSignal(this.profileService.getSubscribersShortList());
+  activeRoute = inject(ActivatedRoute);
+  account = toSignal(this.profileService.getProfileById(this.activeRoute.snapshot.params['id']));
 
   ngOnInit() {
     this.profileService.onInit();
