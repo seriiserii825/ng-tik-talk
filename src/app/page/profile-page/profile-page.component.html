@@ -14,11 +14,14 @@
     dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
     sit amet.
   </div>
-  @if (subscribers() === undefined) {
-    <div class="flex items-center w-full">
-      <app-loading-icon />
-    </div>
-  } @else {
-    <app-profile-followers [subscribers]="subscribers()!" />
-  }
+  <div>
+    @if (subscribers() === undefined) {
+      <div class="flex items-center w-full">
+        <app-loading-icon />
+      </div>
+    } @else {
+      <app-profile-followers [subscribers]="subscribers()!" />
+    }
+    <app-about-me />
+  </div>
 </div>
