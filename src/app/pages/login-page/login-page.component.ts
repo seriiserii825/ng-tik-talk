@@ -8,7 +8,6 @@ import { EyeComponent } from '../../shared/eye/eye.component';
   selector: 'app-login-page',
   imports: [ReactiveFormsModule, EyeComponent],
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.css',
 })
 export class LoginPageComponent {
   authService = inject(AuthService);

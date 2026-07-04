@@ -1,1 +1,9 @@
-<p>profile-page works!</p>
+<div class="grid mb-12 grid-cols-[1fr_340px] items-center gap-16">
+  <app-profile-header-component />
+  <div class="flex">
+    <a [routerLink]="'/settings'" class="flex items-center btn gap-2">
+      <span>Edit</span>
+      <app-svg class="w-4 h-4" icon="settings" />
+    </a>
+  </div>
+</div>

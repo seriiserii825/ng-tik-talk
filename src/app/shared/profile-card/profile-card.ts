@@ -6,7 +6,6 @@ import { ImgUrlPipe } from '../../helpers/pipes/img-url-pipe';
   selector: 'app-profile-card',
   imports: [ImgUrlPipe],
   templateUrl: './profile-card.html',
-  styleUrl: './profile-card.css',
 })
 export class ProfileCard {
   @Input() profile!: IProfile;

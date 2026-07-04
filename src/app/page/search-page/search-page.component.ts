@@ -7,7 +7,6 @@ import { ProfileCard } from '../../shared/profile-card/profile-card';
   selector: 'app-search-page',
   imports: [ProfileCard],
   templateUrl: './search-page.component.html',
-  styleUrl: './search-page.component.css',
 })
 export class SearchPageComponent {
   protected readonly title = signal('ng-wishlist');

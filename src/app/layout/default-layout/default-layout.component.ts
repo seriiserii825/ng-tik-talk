@@ -7,7 +7,6 @@ import { ProfileService } from '../../services/profile.service';
   selector: 'app-default-layout',
   imports: [RouterOutlet, SidebarComponent],
   templateUrl: './default-layout.component.html',
-  styleUrl: './default-layout.component.css',
 })
 export class DefaultLayoutComponent {
   profileService = inject(ProfileService);

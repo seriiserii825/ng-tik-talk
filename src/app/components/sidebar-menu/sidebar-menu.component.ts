@@ -7,7 +7,6 @@ import { SvgIconComponent } from '../svg-icon-component/svg-icon-component';
   selector: 'app-sidebar-menu',
   imports: [NgFor, SvgIconComponent],
   templateUrl: './sidebar-menu.component.html',
-  styleUrl: './sidebar-menu.component.css',
 })
 export class SidebarMenuComponent {
   menuItems: IMenuItem[] = [
