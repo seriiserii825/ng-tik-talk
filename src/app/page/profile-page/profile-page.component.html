@@ -1,10 +1,10 @@
 <div class="grid mb-12 grid-cols-[1fr_340px] items-center gap-16">
-  @if (account() === undefined) {
+  @if (profile$ | async; as profile) {
+    <app-profile-header-component [profile]="profile" />
+  } @else {
     <div class="flex items-center w-full">
       <app-loading-icon />
     </div>
-  } @else {
-    <app-profile-header-component [profile]="account()!" />
   }
   <div class="flex">
     <a [routerLink]="'/settings'" class="flex items-center btn gap-2">
