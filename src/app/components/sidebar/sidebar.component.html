@@ -8,7 +8,7 @@
   <div class="mb-8 ml-3">
     @if (subscribers() === undefined) {
       <div class="flex items-center w-full">
-        <app-loading-icon/>
+        <app-loading-icon />
       </div>
     } @else {
       @for (subscriber of subscribers()!; track subscriber.id) {
